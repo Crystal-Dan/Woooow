@@ -96,7 +96,6 @@ def places():
     return jsonify(PLACES)
 
 if __name__ == '__main__':
-    # Берём порт из переменной окружения, если нет — 5000
     port = int(os.environ.get('PORT', 5000))
-    print(f"Запуск приложения на порту {port}", file=sys.stderr)
+    print(f"Запуск на порту {port}", file=sys.stderr)
     app.run(host='0.0.0.0', port=port, debug=False)
