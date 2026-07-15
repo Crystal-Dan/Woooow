@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: #fcf6f0;
+    color: #3d3530;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+#app {
+    width: 100%;
+    max-width: 1100px;
+    margin: 20px;
+    background: rgba(255, 248, 242, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 48px;
+    padding: 28px 30px 35px;
+    box-shadow: 0 30px 60px rgba(160, 120, 100, 0.15);
+    border: 1px solid rgba(255, 235, 225, 0.6);
+    transition: all 0.3s ease;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 22px;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 2.2rem;
+    letter-spacing: 1px;
+    color: #4d3e38;
+}
+
+h1::after {
+    content: " ✦";
+    color: #c29b8a;
+    font-size: 1.8rem;
+}
+
+.sub {
+    font-size: 1.05rem;
+    color: #7a6a62;
+    margin-top: 6px;
+    font-style: italic;
+    letter-spacing: 0.3px;
+}
+
+/* Контейнер карты с рамкой */
+#map-container {
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(120, 80, 60, 0.12);
+    border: 2px solid #efded6;
+    background: #f2ebe7;
+    position: relative;
+}
+
+#map {
+    height: 480px;
+    width: 100%;
+    background: #e8ddd6;
+}
+
+/* Стилизация попапов */
+.leaflet-popup-content-wrapper {
+    border-radius: 20px;
+    background: rgba(255, 248, 242, 0.96);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    padding: 4px 0;
+    border: 1px solid rgba(255, 235, 225, 0.7);
+}
+
+.leaflet-popup-content {
+    font-size: 1rem;
+    line-height: 1.5;
+    min-width: 200px;
+    padding: 8px 12px;
+    font-family: 'Georgia', serif;
+}
+
+.place-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #3d3530;
+    margin-bottom: 4px;
+}
+
+.place-desc {
+    color: #6a5a52;
+    margin: 6px 0 14px;
+    font-style: italic;
+    font-size: 0.95rem;
+}
+
+.btn-choose {
+    background: #a67c6a;
+    border: none;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: 'Georgia', serif;
+    cursor: pointer;
+    transition: 0.2s;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    letter-spacing: 0.5px;
+}
+
+.btn-choose:hover {
+    background: #8c6b5c;
+    transform: scale(1.02);
+    box-shadow: 0 6px 14px rgba(166, 124, 106, 0.25);
+}
+
+/* Кастомные маркеры с круглым фоном */
+.emoji-marker {
+    background: #fff;
+    border-radius: 50%;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border: 2px solid #f0e0d8;
+    font-size: 22px;
+    line-height: 1;
+    transition: transform 0.15s;
+}
+
+.emoji-marker:hover {
+    transform: scale(1.12);
+}
+
+/* Скрытый аудиоплеер */
+audio {
+    display: none;
+}
+
+/* Индикатор "Сейчас играет" – ненавязчиво */
+#now-playing {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 0.85rem;
+    color: #a0877a;
+    font-style: italic;
+    letter-spacing: 0.3px;
+    opacity: 0.6;
+}
+
+/* Адаптив */
+@media (max-width: 700px) {
+    #app {
+        padding: 16px 14px 20px;
+        margin: 10px;
+        border-radius: 28px;
+    }
+    h1 { font-size: 1.7rem; }
+    #map { height: 350px; }
+    .leaflet-popup-content { min-width: 160px; }
+}
+
+@media (max-width: 450px) {
+    #map { height: 280px; }
+}
